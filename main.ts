@@ -11,6 +11,51 @@ loops.everyInterval(1, function () {
     	
     }
 })
+loops.everyInterval(1, function () {
+    if (robbery >= 500) {
+        basic.showLeds(`
+            . . # . .
+            . # . # .
+            # . . . #
+            . # . # .
+            . . # . .
+            `)
+        basic.pause(100)
+        basic.showLeds(`
+            . . . . .
+            . . # . .
+            . # . # .
+            . . # . .
+            . . . . .
+            `)
+        basic.pause(100)
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . # . .
+            . . . . .
+            . . . . .
+            `)
+        basic.pause(100)
+        basic.clearScreen()
+    } else if (robbery >= 200) {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            # # # # #
+            . . . . .
+            . . . . .
+            `)
+    } else {
+        basic.showLeds(`
+            . . . . .
+            . . . . #
+            . . . # .
+            # . # . .
+            . # . . .
+            `)
+    }
+})
 basic.forever(function () {
     robbery = pins.analogReadPin(AnalogPin.P2)
 })

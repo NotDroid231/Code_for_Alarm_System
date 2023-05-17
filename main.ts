@@ -1,5 +1,6 @@
-input.onButtonPressed(Button.A, function () {
+input.onButtonPressed(Button.AB, function () {
     basic.showString("RESET")
+    music.stopAllSounds()
     control.reset()
 })
 let robbery = 0
@@ -8,15 +9,15 @@ basic.showString("ACTIVE")
 music.playMelody("F F F F E E E E ", 120)
 loops.everyInterval(1, function () {
     if (robbery >= 800) {
-        music.playMelody("G F F G G F F G ", 700)
+        music.playMelody("C5 - - B B - - C5 ", 700)
     } else if (robbery >= 400) {
-        music.playMelody("G G G G G G G G ", 300)
+        music.playMelody("G - - - G - - - ", 100)
     } else {
     	
     }
 })
 loops.everyInterval(1, function () {
-    if (robbery >= 500) {
+    if (robbery >= 800) {
         basic.showLeds(`
             . . # . .
             . # . # .
@@ -42,7 +43,7 @@ loops.everyInterval(1, function () {
             `)
         basic.pause(50)
         basic.clearScreen()
-    } else if (robbery >= 200) {
+    } else if (robbery >= 400) {
         basic.showLeds(`
             . . . . .
             . . . . .

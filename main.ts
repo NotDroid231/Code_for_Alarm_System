@@ -7,8 +7,10 @@ let robbery = 0
 basic.showString("Active")
 basic.forever(function () {
     if (robbery >= 800) {
+        music.setVolume(255)
         music.playMelody("C5 - - B B - - C5 ", 700)
     } else if (robbery >= 400) {
+        music.setVolume(255)
         music.playMelody("G - - - G - - - ", 100)
     } else {
     	
@@ -20,7 +22,7 @@ basic.forever(function () {
 basic.forever(function () {
     if (robbery >= 800) {
         basic.showLeds(`
-            # . # . .
+            . . # . .
             . # . # .
             # . . . #
             . # . # .

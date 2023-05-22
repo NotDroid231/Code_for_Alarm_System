@@ -67,7 +67,9 @@ basic.forever(function () {
 basic.forever(function () {
     if (robbery >= 800) {
         pins.digitalWritePin(DigitalPin.P1, 1)
+        basic.pause(100)
         pins.digitalWritePin(DigitalPin.P1, 0)
+        basic.pause(100)
     } else if (robbery >= 400) {
         pins.digitalWritePin(DigitalPin.P1, 1)
     } else {

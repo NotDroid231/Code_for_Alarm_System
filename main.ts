@@ -6,21 +6,25 @@ input.onButtonPressed(Button.AB, function () {
 let robbery = 0
 basic.showString("Active")
 basic.forever(function () {
-    if (robbery >= 800) {
-        music.setVolume(255)
-        music.playMelody("C5 - - B B - - C5 ", 700)
+    if (robbery >= 600) {
+        pins.digitalWritePin(DigitalPin.P0, 1)
+        basic.pause(100)
+        pins.digitalWritePin(DigitalPin.P0, 0)
+        basic.pause(100)
     } else if (robbery >= 400) {
-        music.setVolume(255)
-        music.playMelody("G - - - G - - - ", 100)
+        pins.digitalWritePin(DigitalPin.P0, 1)
+        basic.pause(500)
+        pins.digitalWritePin(DigitalPin.P0, 0)
+        basic.pause(5000)
     } else {
-    	
+        pins.digitalWritePin(DigitalPin.P0, 0)
     }
 })
 basic.forever(function () {
     robbery = pins.analogReadPin(AnalogPin.P2)
 })
 basic.forever(function () {
-    if (robbery >= 800) {
+    if (robbery >= 600) {
         basic.showLeds(`
             . . # . .
             . # . # .
@@ -65,7 +69,7 @@ basic.forever(function () {
     }
 })
 basic.forever(function () {
-    if (robbery >= 800) {
+    if (robbery >= 600) {
         pins.digitalWritePin(DigitalPin.P1, 1)
         basic.pause(100)
         pins.digitalWritePin(DigitalPin.P1, 0)
